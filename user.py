@@ -28,4 +28,16 @@ class User:
             password += random.choice(chars)
         return password  # computated functions give a return value
 
-    
+    def delete_user(self):
+        '''
+        delete_user method deletes a saved user from the user_list
+        '''
+
+        User.user_list.remove(self)
+
+    @classmethod
+    def display_users(cls):
+        '''
+        method that returns the users list
+        '''
+        return cls.user_list
