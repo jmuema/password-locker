@@ -13,7 +13,7 @@ class TestCredential(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_credential = Credential("twitter", "batman", "drknight") # create credential object
+        self.new_credential = Credential("instagram", "ironman", "ironman20") # create credential object
 
 
     def test_init(self):
@@ -21,9 +21,9 @@ class TestCredential(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_credential.myaccountname,"twitter")
-        self.assertEqual(self.new_credential.myusername,"batman")
-        self.assertEqual(self.new_credential.mypassword,"drknight")
+        self.assertEqual(self.new_credential.myaccountname,"instagram")
+        self.assertEqual(self.new_credential.myusername,"ironman")
+        self.assertEqual(self.new_credential.mypassword,"ironman20")
 
     def test_save_credential(self):
         '''
@@ -43,7 +43,7 @@ class TestCredential(unittest.TestCase):
         test to check if we can check multiple objects within credenials list
         '''
         self.new_credential.save_credential()
-        test_credential = Credential("twitter","batman","drknight") # new credential
+        test_credential = Credential("instagram","ironman","ironman20") # new credential
         test_credential.save_credential()
         self.assertEqual(len(Credential.credential_list),2)
 
@@ -52,7 +52,7 @@ class TestCredential(unittest.TestCase):
         test to remove a credential from our credential list
         '''
         self.new_credential.save_credential()
-        test_credential = Credential("twitter","batman","drknight") # new credential
+        test_credential = Credential("instagram","ironman","ironman20") # new credential
         test_credential.save_credential()
 
         self.new_credential.delete_credential()# Deleting a credential object
@@ -64,10 +64,10 @@ class TestCredential(unittest.TestCase):
         '''
 
         self.new_credential.save_credential()
-        test_credential = Credential("twitter","batman","drknight") # new credential
+        test_credential = Credential("instagram","ironman","ironman20") # new credential
         test_credential.save_credential()
 
-        found_credential = Credential.find_by_username("batman")
+        found_credential = Credential.find_by_username("ironman")
 
         self.assertEqual(found_credential.mypassword,test_credential.mypassword)
 
@@ -77,10 +77,10 @@ class TestCredential(unittest.TestCase):
         '''
 
         self.new_credential.save_credential()
-        test_credential = Credential("twitter","batman","drknight") # new credential
+        test_credential = Credential("instagram","ironman","ironman20") # new credential
         test_credential.save_credential()
 
-        credential_exists = Credential.credential_exist("batman")
+        credential_exists = Credential.credential_exist("ironman")
 
         self.assertTrue(credential_exists)
      

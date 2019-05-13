@@ -13,7 +13,7 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = User("Clark","1234") # create user object
+        self.new_user = User("John","1234") # create user object
 
     def test_init(self):
         '''
@@ -43,7 +43,7 @@ class TestUser(unittest.TestCase):
             objects to our user_list
             '''
             self.new_user.save_user()
-            test_user = User("Oliver","1234") # new user
+            test_user = User("Jake","1234") # new user
             test_user.save_user()
             self.assertEqual(len(User.user_list),2)
 
@@ -52,7 +52,7 @@ class TestUser(unittest.TestCase):
         test_delete_user to test if we can remove a user from our contact list
         '''
         self.new_user.save_user()
-        test_user = User("Hal","1234")
+        test_user = User("Steve","1234")
         test_user.save_user()
 
         self.new_user.delete_user()

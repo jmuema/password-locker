@@ -65,14 +65,14 @@ def generate_password():
 
 
 def main():
-    print("Welcome to your account manager app. What is your name?")
+    print("Welcome to your password storage app. What is your name?")
     my_name = input()
 
     print(f"Welcome {my_name}! ")
     print('\n')
 
     while True:
-        print("Use these short codes to experience the account manager app:\nca- create an account (For first-timers)\nla- log into an account\nex- exit an account")
+        print("Use the short codes to have a good experience the password storage app:\nca- create an account (For first-time users)\nla- log into an account\nex- exit an account")
         shortcode = input().lower()
         print('\n')
 
@@ -96,7 +96,7 @@ def main():
             # create and save new user.
             save_users(create_user(u_name,accountpassword))
             print('\n')
-            print(f"***{u_name} your account has been created***")
+            print(f"***{u_name} your account has been created! Welcome.***")
             print('\n')
 
 
@@ -182,7 +182,7 @@ def main():
                                 print("***That username doesn't exist***")
 
                         elif short_code == "lv":
-                                print("***Until next time***")
+                                print("***Till we meet again, Goodbye!***")
                                 break
 
                         else:
